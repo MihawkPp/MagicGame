@@ -3,6 +3,7 @@ package juegoharrypotter;
 import co.edu.udistrital.SpellBehavior.*;
 import co.edu.udistrital.model.*;
 import java.awt.SystemColor;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,10 +22,10 @@ public class LauncherMagic {
         int action;
         int spell;
         
-        System.out.println("Select a wizard :O"
-                            + "1. Harry Potter"
-                            + "2. Hermione Granger"
-                            + "3. Ron Weasley");
+        System.out.println("Select a wizard :O\n"
+                            + "1. Harry Potter\n"
+                            + "2. Hermione Granger\n"
+                            + "3. Ron Weasley\n");
         
         choice = sc.nextInt();
         
@@ -42,14 +43,22 @@ public class LauncherMagic {
                 throw new AssertionError();
         }
         
-        System.out.println("Select an action: "
-                            + "1. display"
-                            + "2. cast spell"
-                            + "3. change spell"
-                            + "0. Exit");
+        
         
         action = -1;
         while(action != 0) {
+            System.out.println("\nSelect an action: \n"
+                            + "1. display\n"
+                            + "2. cast spell\n"
+                            + "3. change spell\n"
+                            + "0. Exit\n");
+            
+            try {
+                action = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("\nInput valid data\n");
+            }
+            
             switch (action) {
                 case 1:
                     wizard.display();
@@ -58,16 +67,20 @@ public class LauncherMagic {
                     wizard.performSpell();
                     break;
                 case 3:
-                    System.out.println("Select a new spell:"
-                                        + "1. Wingardium Leviosa"
-                                        + "2. Oculus Reparo"
-                                        + "3. Expelliarmus"
-                                        + "4. Expecto Patronum");
+                    System.out.println("\nSelect a new spell:\n"
+                                        + "1. Wingardium Leviosa\n"
+                                        + "2. Oculus Reparo\n"
+                                        + "3. Expelliarmus\n"
+                                        + "4. Expecto Patronum\n");
                     spell = sc.nextInt();
                     changeSpell(spell, wizard);
                     break;
+                case 0:
+                    System.out.println("\nThanks for playinggggg :3\n");
+                    action = 0;
+                    break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("\npusiste datos erroneos, vete >:C\n");
             }
         }
         
