@@ -2,7 +2,6 @@ package juegoharrypotter;
 
 import co.edu.udistrital.SpellBehavior.*;
 import co.edu.udistrital.model.*;
-import java.awt.SystemColor;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -80,7 +79,7 @@ public class LauncherMagic {
                     action = 0;
                     break;
                 default:
-                    System.out.println("\npusiste datos erroneos, vete >:C\n");
+                    System.out.println("\npusiste datos erroneos\n");
             }
         }
         
@@ -112,3 +111,4 @@ public class LauncherMagic {
     }
     
 }
+
