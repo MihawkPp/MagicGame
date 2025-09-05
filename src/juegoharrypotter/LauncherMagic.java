@@ -79,7 +79,7 @@ public class LauncherMagic {
                     action = 0;
                     break;
                 default:
-                    System.out.println("\npusiste datos erroneos, vete >:C\n");
+                    System.out.println("\npusiste datos erroneos\n");
             }
         }
         
@@ -111,3 +111,4 @@ public class LauncherMagic {
     }
     
 }
+
