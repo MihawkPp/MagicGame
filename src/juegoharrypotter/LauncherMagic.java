@@ -2,7 +2,6 @@ package juegoharrypotter;
 
 import co.edu.udistrital.SpellBehavior.*;
 import co.edu.udistrital.model.*;
-import java.awt.SystemColor;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
